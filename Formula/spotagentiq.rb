@@ -5,21 +5,21 @@
 class Spotagentiq < Formula
   desc "Human approval and a tamper-evident audit log for AI agent tool calls"
   homepage "https://www.spotagentiq.com"
-  version "0.1.1"
+  version "0.1.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.1/spotagentiq_0.1.1_darwin_amd64.tar.gz"
-      sha256 "4a0e1b5d280235481872b5c204397a48060635be47084f0b136329e99fd8c60d"
+      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.2/spotagentiq_0.1.2_darwin_amd64.tar.gz"
+      sha256 "df797290fd5cd88175e6467b6154eb98a8a92c8fca4c73138c56e15fbe80aa2d"
 
       define_method(:install) do
         bin.install "spotagentiq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.1/spotagentiq_0.1.1_darwin_arm64.tar.gz"
-      sha256 "8bcb90da45f6e49079aa6c2be2684eef4e860a7d791658974705de4a280b9330"
+      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.2/spotagentiq_0.1.2_darwin_arm64.tar.gz"
+      sha256 "e4843fb528416355b54920635812390b1bb57ffd84100462037b71101653f0f4"
 
       define_method(:install) do
         bin.install "spotagentiq"
@@ -29,15 +29,15 @@ class Spotagentiq < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.1/spotagentiq_0.1.1_linux_amd64.tar.gz"
-      sha256 "8bca779c44e0623a84566fbf789afcbba18400c5fa7c7de0709a4eff010090bf"
+      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.2/spotagentiq_0.1.2_linux_amd64.tar.gz"
+      sha256 "3359517ca227af6a39df9eafdce8a9e6b7ca2b1bffe6d5fc0802a361157ee84c"
       define_method(:install) do
         bin.install "spotagentiq"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.1/spotagentiq_0.1.1_linux_arm64.tar.gz"
-      sha256 "4c749cbc4a419d601b1a1bf40fcd46f1b57ba67061fee6263d5b33e3101d9ca5"
+      url "https://github.com/mckoy-labs/spotagentiq/releases/download/v0.1.2/spotagentiq_0.1.2_linux_arm64.tar.gz"
+      sha256 "6d744c868e686f70e7a3ecbfaab413f76eddac7cc0b38dee452dd47b293f3ff6"
       define_method(:install) do
         bin.install "spotagentiq"
       end
