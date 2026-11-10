@@ -1,0 +1,30 @@
+# Installs the formula from this checkout on real macOS and Linux runners, so
+# a formula that doesn't install never sits on main unnoticed.
+name: test
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Install from this checkout
+        run: |
+          brew tap mckoy-labs/tap "$GITHUB_WORKSPACE"
+          brew install mckoy-labs/tap/spotagentiq
+      - name: Run it
+        run: |
+          spotagentiq version
+          brew test mckoy-labs/tap/spotagentiq
