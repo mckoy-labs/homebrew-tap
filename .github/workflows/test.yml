@@ -20,10 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: Homebrew/actions/setup-homebrew@main
+      # setup-homebrew has already registered this checkout as mckoy-labs/tap.
       - name: Install from this checkout
-        run: |
-          brew tap mckoy-labs/tap "$GITHUB_WORKSPACE"
-          brew install mckoy-labs/tap/spotagentiq
+        run: brew install mckoy-labs/tap/spotagentiq
       - name: Run it
         run: |
           spotagentiq version
